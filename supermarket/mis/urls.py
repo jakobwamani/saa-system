@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 # from mis.views import instocking
-from . import views
+from mis import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('instock/', views.instocking,name='instocking'),
+    path('selling/',views.selling,name='selling'),
 ]
 

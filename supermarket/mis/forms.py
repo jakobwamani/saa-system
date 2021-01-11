@@ -13,3 +13,11 @@ class InStockForm(forms.ModelForm):
         model = stock
         fields = ['product_name','quantity','cost_price','category','selling_price','pub_date']
         
+
+      
+
+class SearchForm(forms.Form):
+    searched_product = forms.CharField()
+    def clean_searched_product(self):
+        data = self.cleaned_data['searched_product']
+        return data

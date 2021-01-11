@@ -1,0 +1,25 @@
+{% extends 'mis/base.html' %}
+{% block title_block %}
+<h1>InStocking</h1>
+{% endblock %}
+
+{% block body_block %}
+<form action=" {% url 'selling' %}" method="get" enctype="multipart/form-data">
+  
+    <label for="Search_product">search_product</label>
+    <input type="text"  name="searchproduct">
+    <input type="submit" value="search">
+</form>
+<hr>
+<table id="results">
+    {% for x in search %}
+    
+    <tr>
+        <th>ProductName</th>
+    </tr>
+    <tr>
+        <th>{{ x.product_name }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
