@@ -1,0 +1,8 @@
+# query = request.GET.copy()
+    # product = query.get('searchproduct')
+    # print (product)
+    # #Removing spaces from txt
+    # x = str(product).strip()
+    # search = stock.objects.filter(product_name=x)
+    # print(search)
+    # return render(request,'selling.html',{'search':search})

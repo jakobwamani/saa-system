@@ -57,6 +57,8 @@ ROOT_URLCONF = 'mis.urls'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'mis/templates/mis')
 print(TEMPLATE_DIR)
+MEDIA_ROOT = os.path.join(BASE_DIR,'mis/media')
+
 
 TEMPLATES = [
     {
@@ -125,3 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'

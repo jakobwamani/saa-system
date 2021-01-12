@@ -16,9 +16,17 @@
     
     <tr>
         <th>ProductName</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Cost_Price</th>
+        <th>SellingPrice</th>
     </tr>
     <tr>
         <th>{{ x.product_name }}</th>
+        <th>{{ x.quantity }}</th>
+        <th>{{ x.category }}</th>
+        <th>{{ x.cost_price }}</th>
+        <th>{{ x.selling_price }}</th>
     </tr>
     {% endfor %}
 </table>

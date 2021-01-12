@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
-# from mis.views import instocking
+from django.conf import settings
+from django.conf.urls.static import static
+from django.http import StreamingHttpResponse
+import cv2
+# from camera import VideoCamera, gen
 from mis import views
 
 urlpatterns = [
@@ -23,5 +27,11 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('instock/', views.instocking,name='instocking'),
     path('selling/',views.selling,name='selling'),
+    # path('selling/', lambda r: StreamingHttpResponse(gen(VideoCamera()),
+    #                                                  content_type='multipart/x-mixed-replace; boundary=frame')),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+
 
